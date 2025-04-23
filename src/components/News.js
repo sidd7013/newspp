@@ -39,6 +39,7 @@ export class News extends Component {
          loading:false//jab bhi koi cheese load ho rahi hogi toh make it true and show spinner and make it false when all data load   
        }
    }
+
   render() {
     
     return (
@@ -48,11 +49,13 @@ export class News extends Component {
           <div className="col-md-4">
              <NewsItem title="mytitle" description="mydesc"  imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg"  />
           </div>
-          
-          
-        </div>
-
-        
+          <div className="col-md-4">
+             <NewsItem title="mytitle" description="mydesc"  imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg"  />
+          </div>
+          <div className="col-md-4">
+             <NewsItem title="mytitle" description="mydesc"  imageUrl="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg"  />
+          </div>
+        </div> 
       </div>
     )
   }

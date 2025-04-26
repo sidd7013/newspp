@@ -1,9 +1,24 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 import Spinner from './Spinner';
+import PropTypes from 'prop-types'
+
 
 export class News extends Component {
 
+  static defaultProps ={
+    country:"us",
+    category:"general",
+    pageSize:8
+  }
+
+  static propTypes ={
+    country:PropTypes.string,
+    category:PropTypes.string,
+    pageSize:PropTypes.number,
+
+    
+  }
 
   constructor() {
     super();
@@ -17,7 +32,7 @@ export class News extends Component {
 
   async componentDidMount() {
     console.log("cmd");
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=2573037d3ddc4215bd6e23dc261eb65c&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?&country=${this.props.country}&category=${this.props.category}&apiKey=2573037d3ddc4215bd6e23dc261eb65c&page=1&pageSize=${this.props.pageSize}`;
     this.setState({loading: true});
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -32,7 +47,7 @@ export class News extends Component {
   handlePrevClick = async () => {
     console.log("Previous");
 
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=2573037d3ddc4215bd6e23dc261eb65c&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?&country=${this.props.country}&category=${this.props.category}&apiKey=2573037d3ddc4215bd6e23dc261eb65c&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
     this.setState({loading: true});
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -51,7 +66,7 @@ export class News extends Component {
 
     }
     else{
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=2573037d3ddc4215bd6e23dc261eb65c&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?&country=${this.props.country}&category=${this.props.category}&apiKey=2573037d3ddc4215bd6e23dc261eb65c&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
     this.setState({loading: true});
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -68,7 +83,8 @@ export class News extends Component {
     console.log("render");
     return (
       <div className='container my-3'>
-      <h1 className="text-center">News Monkey -Top Headlines</h1> 
+      <h1 className="text-center" style={{margin:'35px 0px'}}>News Monkey -Top Headlines</h1> 
+        {/* ek {}-outerbracket for js and {}-for margin */}
         {/* this.state.articles-are our articles,map-is higher order array method hain ,
         jab bhi aap .map() use karte ho toh har ek elements ko iterate karne ke liye aapko har ek element ko ek unique key deni padti hain*/}
      {this.state.loading && <Spinner/>}

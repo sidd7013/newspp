@@ -20,14 +20,20 @@ export class News extends Component {
     
   }
 
-  constructor() {
-    super();
-    console.log("Hello I am a constructor from News component");
+  capitalizeFirstLetter =(String)=>
+    {
+        return String.charAt(0).toUpperCase() + String.slice(1);
+    }
+
+  constructor(props) {
+    super(props);
     this.state = {
       articles: [],
       loading: false,//jab bhi koi cheese load ho rahi hogi toh make it true and show spinner and make it false when all data load   
       page:1
     }
+
+   document.title=`${this.capitalizeFirstLetter(this.props.category)} - NewsMonkey`;
   }
 
   async updateNews(){
@@ -62,7 +68,7 @@ export class News extends Component {
     console.log("render");
     return (
       <div className='container my-3'>
-      <h1 className="text-center" style={{margin:'35px 0px'}}>News Monkey -Top Headlines</h1> 
+      <h1 className="text-center" style={{margin:'35px 0px'}}>News Monkey -Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1> 
         {/* ek {}-outerbracket for js and {}-for margin */}
         {/* this.state.articles-are our articles,map-is higher order array method hain ,
         jab bhi aap .map() use karte ho toh har ek elements ko iterate karne ke liye aapko har ek element ko ek unique key deni padti hain*/}

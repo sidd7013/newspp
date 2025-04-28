@@ -27,4 +27,15 @@ Updating(new props/setstate()/forceUpdate())->render->react updates DOM->compone
 Unmounting->componentWillUnmount()
 
 render phase main aap state ko change nahi kar sakte
+------------------------------------------------------------
+<h1 className="text-center" style={{margin:'35px 0px'}}>....</h1>
+ ek {}-outerbracket for js and {}-for margin
+
+this.state.articles-are our articles,map-is higher order array method hain ,
+jab bhi aap .map() use karte ho toh har ek elements ko iterate karne ke liye aapko har ek element ko ek unique key deni padti hain
+
+if this.state.loading is true then only show <Spinner/> 
+
+//jab bhi koi cheese load ho rahi hogi toh make it true and show spinner and make it false when all data load   
+
 

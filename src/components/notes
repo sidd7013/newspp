@@ -65,5 +65,7 @@ useRef-it will return mutable reference object jis ke andar ek .current property
        useRef ek foldr hain jiske .current ke andar koi bhi dom ka element reh sakta hain.
        kisi bhi ek element ka reference aap ki jsx ke andar koi bhi ek tag hain uska reference rakhne ke liye useRef kam ata hain
 
+addhe component class based and addhe component function based ho sakte hain react main.
 
-
+ //eslint-disable-next-line
+ use to remove error message from console. simply paste in line where error occurs.

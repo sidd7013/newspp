@@ -38,4 +38,32 @@ if this.state.loading is true then only show <Spinner/>
 
 //jab bhi koi cheese load ho rahi hogi toh make it true and show spinner and make it false when all data load   
 
+jo sara kam lifecycle methods kar rahe the woh kam abb hooks ki madat se karenge.
+hoolks kya hota hain react main, functions hote hain jo aap logo ko function based component main woh sari cheeje karne ko allow karte hain jo hum class based component main kar rahe the.
+Hooks in React-
+->features of class based components in function based components 
+yani ki class based components main jo features use kiye ja rahe the woh features hum function based components main bhi use kar sakte hain using hooks.
+->it allows you to use state and other react features without writing a class.(previously in class based component, we use this.state to access the state, this.setState use kar rahe the jab bhi hume koi bhi state update ya set karni thi )
+
+commonly used react hooks-
+useState-isse hum state ko update kar sakte hain and state ki intial value ko set kar sakte hain
+        suppose hum ne ek text naam ka variable banaya, abb usse hum state ka hissa banana chahte hain,
+        useState se hum do cheeje return karwa sakte hain text and setText, setText ek function hoga jo mujhe future main update karne ke kaam aye ga and text ek variable hain jo iss useState ka part hain.
+        hum ek se jyda baar useState ko use kar sakte hain
+useEffect-side effect perform karne ke liye madat karta hain. jo kam hum componentDidMount par kar rahe the woh kam hum useEffect par kar sakte hain.
+        let suppose apna component update hota hain, koi cheese kar wani hain toh woh cheese hum useEffect ke andar daal kar karwa sakte hain.
+        e.g let suppose we have 1 state text variable,jab wo change ho tabhi main kuch side effect perform karwau e.g text change hota hain toh main ek alert lana chahta hoo toh ye cheese main useEffect ke andar daal sakta hoo.
+
+//learn more about this two later
+useContext-context api use karne ke kam ata hain. jab humare pass bahot sare components hote hain, aur component ke andar component ke andar component hote hain toh humara ek complex component tree ban jata hain.
+         koi bhi prop hume App.js se niche bhejna hain toh bahot baar hume prop drill karna padata hain.
+         prop drill matlab ek prop se dusre prop fir dusre prop se uske next wale component jaise humne kiya
+         app se news main and news se newsitem main
+         jo function mujhe niche run karna tha woh mujhe itni jagha bhej bhej kar run karna pada.
+         context api aapko globally function ko availble kara deti hain toh aap kahi se bhi koi bhi function ya koi state context ke andar us kar sakte ho.
+useRef-it will return mutable reference object jis ke andar ek .current property hoti hain.
+       useRef ek foldr hain jiske .current ke andar koi bhi dom ka element reh sakta hain.
+       kisi bhi ek element ka reference aap ki jsx ke andar koi bhi ek tag hain uska reference rakhne ke liye useRef kam ata hain
+
+
 
